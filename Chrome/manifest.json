@@ -1,0 +1,32 @@
+{
+   "sidebar_action": {
+      "default_icon": {
+         "128": "data/icons/icon-128.png",
+         "32": "data/icons/icon-32.png",
+         "38": "data/icons/icon-38.png",
+         "512": "data/icons/icon-512.png"
+      },
+      "default_panel": "data/sidebar.html",
+      "default_title": "Sidebar for YouTube™"
+   },
+   "background": {
+      "service_worker": "background.js"
+   },
+   "description": "Simple access to YouTube using the sidebar UI",
+   "homepage_url": "https://www.downloadhub.cloud/2023/02/History.html",
+   "icons": {
+      "128": "data/icons/icon-128.png",
+      "32": "data/icons/icon-32.png",
+      "38": "data/icons/icon-38.png",
+      "512": "data/icons/icon-512.png"
+   },
+   "manifest_version": 3,
+   "name": "Sidebar for YouTube™",
+   "permissions": [ 
+      "storage", 
+      "tabs",
+      "webRequest"
+   ],
+   "short_name": "barYT",
+   "version": "1.0.1"
+}
