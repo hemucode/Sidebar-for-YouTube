@@ -27,8 +27,14 @@
       "storage", 
       "tabs",
       "webRequest",
+      "scripting", 
+      "webNavigation",
       "declarativeNetRequest"
    ],
    "short_name": "barYT",
-   "version": "1.0.1"
+   "version": "1.0.1",
+   "web_accessible_resources": [ {
+      "matches": [ "*://*/*" ],
+      "resources": [ "data/sidebar/button.css" ]
+   } ]
 }

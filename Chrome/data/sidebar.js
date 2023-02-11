@@ -76,7 +76,7 @@ window.addEventListener("load", function () {
     faqButton.setAttribute("title", "Support page");
     faqButton.style.backgroundImage = "url(" + faqicon + ')';
     faqButton.addEventListener("click", function () {
-      background.send("faq");
+      //background.send("faq");
     });
     tr.appendChild(faqButton);
 
