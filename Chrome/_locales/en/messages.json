@@ -1,0 +1,30 @@
+{
+   "app_description": {
+      "message": "Simple access to YouTube using the sidebar UI"
+   },
+   "app_name": {
+      "message": "Sidebar for YouTube™"
+   },
+   "rate":{
+      "message": "Please help and rate us!"
+   },
+   "autolike":{
+      "message": "Auto Like"
+   },
+   "manuallike":{
+      "message": "Manual Like"
+   },
+   "autosubscribe":{
+      "message": "Auto subscribe"
+   },
+   "manualsubscribe":{
+      "message": "Manual subscribe"
+   },
+   "adsblock": {
+      "message": "Ads Block YouTube"
+   },
+   "adsunblock": {
+      "message": "Ads Unblock YouTube"
+   }
+
+}
