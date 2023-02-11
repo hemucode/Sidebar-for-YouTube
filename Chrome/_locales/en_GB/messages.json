@@ -9,22 +9,22 @@
       "message": "Please help and rate us!"
    },
    "autolike":{
-      "message": "Auto Like"
+      "message": "YouTube Glow"
    },
    "manuallike":{
-      "message": "Manual Like"
+      "message": "YouTube Normal"
    },
    "autosubscribe":{
-      "message": "Auto subscribe"
+      "message": "YouTube Desktop view"
    },
    "manualsubscribe":{
-      "message": "Manual subscribe"
+      "message": "YouTube Mobile view"
    },
    "adsblock": {
-      "message": "Ads Block"
+      "message": "Ads Block YouTube"
    },
    "adsunblock": {
-      "message": "Ads Unblock"
+      "message": "Ads Unblock YouTube"
    }
 
 }

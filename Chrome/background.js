@@ -3,15 +3,22 @@ importScripts("lib/chrome.js");
 importScripts("lib/runtime.js");
 importScripts("lib/common.js");
 
-var MOBILE_CHROME_USER_AGENT = 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.1 Mobile/15E148 Safari/604.1';
-chrome.webRequest.onBeforeSendHeaders.addListener(
-    function(details) {
-        for (var i = 0; i < details.requestHeaders.length; ++i) {
-            if (details.requestHeaders[i].name === 'User-Agent') {
-                details.requestHeaders[i].value = MOBILE_CHROME_USER_AGENT;
-                break;
-            }
-        }
-        return {requestHeaders: details.requestHeaders};
-}, {urls: ['<all_urls>']}, ['blocking', 'requestHeaders']);
 
+// chrome.tabs.query({
+//   active:!0
+// }, function(tabs) {
+//     var x = "window.navigator.__defineGetter__('userAgent', function() {" +
+//             "return 'Mozilla/5.0 (Linux; Android 4.2.1; en-us; Nexus 5 Build/JOP40D)" +
+//             " AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Mobile " + 
+//             "Safari/535.19'; });console.log(navigator.userAgent);";
+
+//     for (var i = 0;i < tabs.length;i++) {
+//       var code = 'var s = document.createElement("script"); s.text = "' + x +
+//                  '"; document.head.insertBefore(s, document.head.firstChild);' + 
+//                  'navigator.userAgent ="s"; console.log(navigator.userAgent);';
+
+//       chrome.tabs.executeScript(tabs[i].id, {
+//         code: code
+//       });
+//     }
+//   });
