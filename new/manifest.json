@@ -1,0 +1,40 @@
+{
+   "background": {
+      "page": "lib/chrome/background.html"
+   },
+   "description": "Easy Access to YouTube via Sidebar UI",
+   "developer": {
+      "name": "anthonyfindler"
+   },
+   "homepage_url": "https://mybrowseraddon.com/youtube-sidebar.html",
+   "icons": {
+      "128": "data/icons/128.png",
+      "16": "data/icons/16.png",
+      "32": "data/icons/32.png",
+      "48": "data/icons/48.png",
+      "64": "data/icons/64.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0RBmcXiyKrMrBvBvu5lYt29A5V7jjWDs9PWXxFcoyLO4poSxpfM+7MynFGmDJNPGRshNjWedCBoG61XjWQCwaN6F2syA22GqsVnNCR82RqC4OU+lEe2LIozIIynk7SFdOeeZJDepXtx6DhYInABBlU+0gA+g51hJB0TGCKCO37HiUDcvFZtSM+bmTqUEcIEdS28K9upmkDEXx2uCqaIeuk+E+yGMbm1ASf0cmba7F9eth609bsnku2b4HXudP/Ms6rL0cln0gP+kydYZTivz2oFy1wJt6rbVcllmyaeHQajtOa5v3ntaMgj6ncSPczmokBNXzCcXDIG3TPanVB2tyQIDAQAB",
+   "manifest_version": 2,
+   "name": "Sidebar for YouTube™",
+   "options_ui": {
+      "chrome_style": true,
+      "open_in_tab": true,
+      "page": "data/options/options.html"
+   },
+   "permissions": [ "storage", "http://*/*", "https://*/*", "webRequest", "webRequestBlocking" ],
+   "short_name": "youtube-sidebar",
+   "sidebar_action": {
+      "default_icon": {
+         "16": "data/icons/16.png",
+         "32": "data/icons/32.png",
+         "48": "data/icons/48.png",
+         "64": "data/icons/64.png"
+      },
+      "default_panel": "data/sidebar/sidebar.html",
+      "default_title": "Sidebar for YouTube™"
+   },
+   "update_url": "https://extension-updates.opera.com/api/omaha/update/",
+   "version": "0.1.9",
+   "web_accessible_resources": [ "data/sidebar/inject/inject.css" ]
+}
