@@ -45,10 +45,14 @@
     "scripting",
     "declarativeNetRequest"
   ],
-  "host_permissions": [
-    "<all_urls>"
-  ],
   "default_locale": "en",
    "short_name": "sbyt",
-   "version": "1.0.2"
+   "version": "1.0.4",
+   "declarative_net_request" : {
+    "rule_resources" : [{
+      "id": "removeHeader",
+      "enabled": true,
+      "path": "header.json"
+    }]
+  }
 }

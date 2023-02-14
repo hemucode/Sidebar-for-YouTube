@@ -11,28 +11,28 @@ chrome.runtime.onStartup.addListener(async () => {
 
 
 
-async function filters(){
-  console.log("filters");
-  const RULE = {
-    id: 1,
-    condition: {
-      urlFilter: "||youtube.com^",
-      resourceTypes: ['sub_frame']
-    },
-    action: {
-      type: 'modifyHeaders',
-      requestHeaders: [
-        {header: 'x-frame-options', operation: 'remove'},
-        {header: 'frame-options', operation: 'remove'}
-      ],
-    },
-  };
-  chrome.declarativeNetRequest.updateDynamicRules({
-    removeRuleIds: [RULE.id],
-    addRules: [RULE],
-  });
+// async function filters(){
+//   console.log("filters");
+//   const RULE = {
+//     id: 1,
+//     condition: {
+//       urlFilter: "||youtube.com^",
+//       resourceTypes: ['sub_frame']
+//     },
+//     action: {
+//       type: 'modifyHeaders',
+//       requestHeaders: [
+//         {header: 'x-frame-options', operation: 'remove'},
+//         {header: 'frame-options', operation: 'remove'}
+//       ],
+//     },
+//   };
+//   chrome.declarativeNetRequest.updateDynamicRules({
+//     removeRuleIds: [RULE.id],
+//     addRules: [RULE],
+//   });
 
-}
+// }
 
 var CURRENT_YOUTUBE_URL = "https://www.youtube.com/";
 
