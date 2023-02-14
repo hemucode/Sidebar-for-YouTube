@@ -15,10 +15,10 @@
       "message": "YouTube Normal"
    },
    "autosubscribe":{
-      "message": "YouTube Desktop view"
+      "message": "YouTube Mobile view"
    },
    "manualsubscribe":{
-      "message": "YouTube Mobile view"
+      "message": "YouTube Desktop view"
    },
    "adsblock": {
       "message": "Ads Block YouTube"
