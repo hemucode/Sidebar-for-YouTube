@@ -38,7 +38,7 @@ body {
   cursor: pointer;
   text-align: center;
   background-size: 12px;
-  background-color: #606060;
+  background-color: #171b1f;
   transition: 300ms ease all;
   background-repeat: no-repeat;
   background-position: center center;
@@ -53,5 +53,5 @@ body {
 }
 
 #top-button-table tr td:hover {
-  background-color: rgba(0,0,0,0.9);
+  background-color: #606060;
 }

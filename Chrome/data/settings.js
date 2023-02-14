@@ -1,6 +1,4 @@
 window.addEventListener("load", function () {
-  var iframe = document.getElementById("sidebar-iframe");
-  if (iframe.src === "about:blank") iframe.src = "https://www.youtube.com/";
   /*  */
   var head = document.documentElement || document.head || document.querySelector("head");
   if (head) {
@@ -32,24 +30,13 @@ window.addEventListener("load", function () {
     backButton.addEventListener("click", function () {window.history.back()});
     tr.appendChild(backButton);
     /*  */
-    var forwardButton = document.createElement("td");
-    forwardButton.setAttribute("title", "Forward");
-    forwardButton.setAttribute("id", "forward-button");
-    forwardButton.style.backgroundImage = "url(" + forwardicon + ')';
-    forwardButton.addEventListener("click", function () {
-      window.history.forward()
-    });
-    tr.appendChild(forwardButton);
 
     var settingsButton = document.createElement("td");
     settingsButton.setAttribute("title", "Settings");
     settingsButton.setAttribute("id", "settings-button");
     settingsButton.style.backgroundImage = "url(" + settingsicon + ')';
     settingsButton.addEventListener("click", function () {
-      //settings
-      // var iframe = document.getElementById("sidebar-iframe");
-      // iframe.src = chrome.runtime.getURL("data/settings.html");
-      document.location.href = chrome.runtime.getURL("data/settings.html");
+      window.history.back()
     });
     tr.appendChild(settingsButton);
     /*  */
@@ -58,17 +45,10 @@ window.addEventListener("load", function () {
     homeButton.setAttribute("title", "Home");
     homeButton.setAttribute("id", "home-button");
     homeButton.style.backgroundImage = "url(" + homeicon + ')';
-    homeButton.addEventListener("click", function () {document.location.reload()});
+    homeButton.addEventListener("click", function () {window.history.back()});
     tr.appendChild(homeButton);
     /*  */
-    var popoutButton = document.createElement("td");
-    popoutButton.setAttribute("title", "Pop-out");
-    popoutButton.setAttribute("id", "pop-out-button");
-    popoutButton.style.backgroundImage = "url(" + popouticon + ')';
-    popoutButton.addEventListener("click", function () {
-      injectStyles();
-    });
-    tr.appendChild(popoutButton);
+
     /*  */
     var faqButton = document.createElement("td");
     faqButton.setAttribute("id", "faq-button");
@@ -85,8 +65,3 @@ window.addEventListener("load", function () {
   }
 });
 
-function injectStyles() {
-  return chrome.runtime.sendMessage({
-    action: "INSERT_CSS",
-  });
-}

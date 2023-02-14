@@ -4,21 +4,51 @@ config.welcome = {
   set lastupdate (val) {app.storage.write("lastupdate", val)},
   get lastupdate () {return app.storage.read("lastupdate") !== undefined ? app.storage.read("lastupdate") : 0}
 };
-chrome.webRequest.onHeadersReceived.addListener
-  (
-    function (info) {
-      var headers = info.responseHeaders;
-      for (var i = headers.length - 1; i >= 0; --i) {
-        var header = headers[i].name.toLowerCase();
-        if (header == 'x-frame-options' || header == 'frame-options' || header == 'content-security-policy' || header == 'x-content-type-options' || header == 'x-xss-protection') {
-          headers.splice(i, 1); // Remove header
-        }
-      }
-      return { responseHeaders: headers };
+
+chrome.runtime.onStartup.addListener(async () => {
+  await filters();
+});
+
+
+
+async function filters(){
+  console.log("filters");
+  const RULE = {
+    id: 1,
+    condition: {
+      urlFilter: "||youtube.com^",
+      resourceTypes: ['sub_frame']
     },
-    {
-      urls: ['*://*/*'],
-      types: ['sub_frame']
+    action: {
+      type: 'modifyHeaders',
+      requestHeaders: [
+        {header: 'x-frame-options', operation: 'remove'},
+        {header: 'frame-options', operation: 'remove'}
+      ],
     },
-    ['blocking', 'responseHeaders']
-  );
+  };
+  chrome.declarativeNetRequest.updateDynamicRules({
+    removeRuleIds: [RULE.id],
+    addRules: [RULE],
+  });
+
+}
+
+var CURRENT_YOUTUBE_URL = "https://www.youtube.com/";
+
+
+chrome.runtime.onMessage.addListener(async (request, sender) => {
+  switch (request.action) {
+    case "INSERT_CSS_RULE": {
+      return CURRENT_YOUTUBE_URL = `${request.rule}`;
+      console.log(request.rule)
+    }
+    case "INSERT_CSS": {
+      return chrome.tabs.create({ url: CURRENT_YOUTUBE_URL });
+    } 
+  }
+});
+
+
+
+
